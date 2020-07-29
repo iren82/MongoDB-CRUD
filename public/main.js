@@ -35,7 +35,7 @@ deleteButton.addEventListener('click', _ => {
         })
         .then(response => {
             if (response === 'Cero documentos') {
-                messageDiv.textContent = 'Sin más documentos de Varg'
+                message.textContent = 'Sin más documentos de ' 
             } else {
                 window.location.reload(true)
             }

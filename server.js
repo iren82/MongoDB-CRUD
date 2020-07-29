@@ -9,7 +9,7 @@ MongoClient.connect(uri, {
     useUnifiedTopology: true
 }, (err, client) => {
     if (err) return console.error(err)
-    console.log('Connected to Database')
+    console.log('DB Online, servidor conectado')
     const db = client.db('mDB-crud')
     const quotesCollection = db.collection('quotes');
 
@@ -33,7 +33,7 @@ MongoClient.connect(uri, {
                     quotes: results
                 })
             })
-            .catch( /* ... */ )
+            .catch()
     })
     app.put('/quotes', (req, res) => {        // Trae el dato que manda el PUT y ejecuta el update en la DB
         quotesCollection.findOneAndUpdate({
