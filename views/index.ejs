@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto MongoDB CRUD</title>
+</head>
+<body>
+    <h1>MongoDB Be With You</h1>
+    <form action="/quotes" method="POST">
+        <input type="text" placeholder="Nombre" name="Nombre">
+        <input type="text" placeholder="Texto" name="Texto">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h2> Documentos en MongoDB </h2>
+    <ul class="quotes">
+        <!-- Loop through quotes -->
+        <% for(var i = 0; i < quotes.length; i++) {%>
+        <li class="quote">
+            <!-- Output name from the iterated quote object -->
+            <span><%= quotes[i].Nombre %></span>:
+            <!-- Output quote from the iterated quote object -->
+            <span><%= quotes[i].Texto %></span>
+        </li>
+        <% } %>
+    </ul>
+<div>
+    
+    <h2>Modificar Primer Texto</h2>
+    <p>
+        Modificamos el primer documento
+    </p>
+    <button id="update-button">Modificar</button>
+</div>
+<div>
+    <h2>Borrar un texto</h2>
+    <p>
+        Borramos un documento de la DB
+    </p>
+    <button id="delete-button">Borrar Documento</button>
+</div>
+<div id="message"></div>
+
+<script src="/main.js"></script>
+</body>
+
+</html>
