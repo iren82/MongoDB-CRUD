@@ -16,8 +16,10 @@ update.addEventListener('click', _ => {
             if (res.ok) return res.json()
         })
         .then(response => {
-            window.location.reload(true)
+            window.location.reload(true)  
+            alert('Documento actualizado')
         })
+        
 })
 
 deleteButton.addEventListener('click', _ => {
@@ -32,11 +34,12 @@ deleteButton.addEventListener('click', _ => {
         })
         .then(res => {
             if (res.ok) return res.json()
-        })
+                    })
         .then(response => {
             if (response === 'Cero documentos') {
                 message.textContent = 'Sin más documentos de ' 
             } else {
+                alert('Documento borrado')
                 window.location.reload(true)
             }
         })
